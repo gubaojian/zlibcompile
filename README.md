@@ -1,0 +1,2 @@
+# zlibcompile
+compile zlib
