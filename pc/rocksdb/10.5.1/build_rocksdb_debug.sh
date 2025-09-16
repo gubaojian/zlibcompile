@@ -33,6 +33,8 @@ tar -zxvf ${DOWNLOAD_FILE}
 cd ${UNZIP_DIR}
 rm -rf ${INSTALL_DIR}
 mkdir -p ${INSTALL_DIR}
+
+
 export CFLAGS="${CFLAGS} -g -O0 "
 export CXXFLAGS="${CXXFLAGS} -g -O0 "
  
@@ -43,8 +45,9 @@ export ROCKSDB_DISABLE_BZIP=1
 export ROCKSDB_DISABLE_SNAPPY=1
 export ROCKSDB_DISABLE_JEMALLOC=1
 make -j12 static_lib DISABLE_WARNING_AS_ERROR=1 DEBUG_LEVEL=1
+make install-static  PREFIX=$INSTALL_DIR
 make -j12 shared_lib DISABLE_WARNING_AS_ERROR=1 DEBUG_LEVEL=1
-make install PREFIX=$INSTALL_DIR
+make install-shared  PREFIX=$INSTALL_DIR
  
 cd ..
 rm -rf ${CDEPS_ZIP_FILE}
