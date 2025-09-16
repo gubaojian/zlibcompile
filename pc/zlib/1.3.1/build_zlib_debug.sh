@@ -33,9 +33,9 @@ tar -zxvf ${DOWNLOAD_FILE}
 cd ${UNZIP_DIR}
 rm -rf ${INSTALL_DIR}
 mkdir -p ${INSTALL_DIR}
-export CFLAGS="${CFLAGS} -g -O0 "
-export CXXFLAGS="${CXXFLAGS} -g -O0 "
- ./configure --prefix=$INSTALL_DIR
+export CFLAGS="${CFLAGS} -g -O0 -DSQLITE_DEBUG"
+export CXXFLAGS="${CXXFLAGS} -g -O0 -DSQLITE_DEBUG "
+ ./configure --with-debug --prefix=$INSTALL_DIR
  make -j12
  make install
  
