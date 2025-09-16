@@ -36,7 +36,7 @@ mkdir -p ${INSTALL_DIR}
 ## https://sqlite.org/src/doc/trunk/doc/compile-for-unix.md
 export CFLAGS="${CFLAGS} -O3 "
 export CXXFLAGS="${CXXFLAGS} -O3 "
- ./configure --enable-static --prefix=$INSTALL_DIR
+ ./configure --enable-static --with-data-packaging=static --prefix=$INSTALL_DIR
  make -j12
  make install
  
