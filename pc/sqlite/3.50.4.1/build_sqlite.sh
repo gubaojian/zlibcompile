@@ -33,9 +33,10 @@ tar -zxvf ${DOWNLOAD_FILE}
 cd ${UNZIP_DIR}
 rm -rf ${INSTALL_DIR}
 mkdir -p ${INSTALL_DIR}
+## https://sqlite.org/src/doc/trunk/doc/compile-for-unix.md
 export CFLAGS="${CFLAGS} -O3 "
 export CXXFLAGS="${CXXFLAGS} -O3 "
- ./configure --prefix=$INSTALL_DIR
+ ./configure --enable-all --prefix=$INSTALL_DIR
  make -j12
  make install
  
