@@ -27,8 +27,8 @@ else
   rm -rf ${DOWNLOAD_FILE}
   curl -OL ${DOWNLOAD_URL}
 fi
-rm -rf UNZIP_DIR
-echo "Extracting ${LIB_NAME} source code ${UNZIP_DIR}..."
+rm -rf ${UNZIP_DIR}
+echo "Extracting ${LIB_NAME} source code to ${UNZIP_DIR}..."
 tar -zxvf ${DOWNLOAD_FILE}
 cd ${UNZIP_DIR}
 rm -rf ${INSTALL_DIR}
