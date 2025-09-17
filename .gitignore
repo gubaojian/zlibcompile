@@ -44,3 +44,8 @@ pc/*/*/*.zip
 pc/*/*/*.gz
 pc/*/*/*/
 pc/*/*/*.tgz
+
+cmd/*/*/*.zip
+cmd/*/*/*.gz
+cmd/*/*/*/
+cmd/*/*/*.tgz
