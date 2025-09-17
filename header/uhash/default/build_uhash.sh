@@ -1,13 +1,13 @@
 #!/bin/bash
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-LIB_MODE=cmd
-LIB_NAME=xxd
-VERSION=1.2
+LIB_MODE=header
+LIB_NAME=uthash
+VERSION=master
 INSTALL_DIR=$HOME/cdeps/${LIB_MODE}/${LIB_NAME}/${VERSION}
 CDEPS_ZIP_FILE=cdeps_${LIB_NAME}_${VERSION}.zip
-DOWNLOAD_FILE=${LIB_NAME}-${VERSION}.tar.gz
-DOWNLOAD_URL="https://github.com/ckormanyos/xxd/archive/refs/tags/v${VERSION}.tar.gz"
+DOWNLOAD_FILE=${LIB_NAME}-${VERSION}.zip
+DOWNLOAD_URL="https://github.com/troydhanson/uthash/archive/refs/heads/master.zip"
 UNZIP_DIR=${LIB_NAME}-${VERSION}
 uname -a
 echo "Script directory: $SCRIPT_DIR"
@@ -36,13 +36,9 @@ mkdir -p ${INSTALL_DIR}
 export CFLAGS="${CFLAGS} -O3 "
 export CXXFLAGS="${CXXFLAGS} -O3 "
 
- mkdir build
- cd build
- cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5  ..
- make
- mkdir -p ${INSTALL_DIR}/bin
- cp xxd ${INSTALL_DIR}/bin
- cd ..
+mkdir -p ${INSTALL_DIR}/include
+cp src/* ${INSTALL_DIR}/include
+
  
 cd ..
 rm -rf ${CDEPS_ZIP_FILE}
@@ -55,5 +51,4 @@ echo "Package moved to script directory: $SCRIPT_DIR/${CDEPS_ZIP_FILE}"
 echo "${LIB_NAME} Build script completed successfully."
 
 
-# usage
-## xxd -i cdeps_xxd_1.2.zip  test.c
+

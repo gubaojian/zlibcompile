@@ -49,3 +49,9 @@ cmd/*/*/*.zip
 cmd/*/*/*.gz
 cmd/*/*/*/
 cmd/*/*/*.tgz
+
+
+header/*/*/*.zip
+header/*/*/*.gz
+header/*/*/*/
+header/*/*/*.tgz
