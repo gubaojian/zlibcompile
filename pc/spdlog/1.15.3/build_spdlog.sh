@@ -2,12 +2,12 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LIB_MODE=release
-LIB_NAME=fmt
-VERSION=11.2.0
+LIB_NAME=spdlog
+VERSION=1.15.3
 INSTALL_DIR=$HOME/cdeps/${LIB_MODE}/${LIB_NAME}/${VERSION}
 CDEPS_ZIP_FILE=cdeps_${LIB_NAME}_${VERSION}.zip
-DOWNLOAD_FILE=${VERSION}.tar.gz
-DOWNLOAD_URL="https://github.com/fmtlib/fmt/archive/refs/tags/${VERSION}.tar.gz"
+DOWNLOAD_FILE=v${VERSION}.tar.gz
+DOWNLOAD_URL="https://github.com/gabime/spdlog/archive/refs/tags/v${VERSION}.tar.gz"
 UNZIP_DIR=${LIB_NAME}-${VERSION}
 uname -a
 echo "Script directory: $SCRIPT_DIR"
@@ -39,8 +39,8 @@ export CXXFLAGS="${CXXFLAGS} -O3 "
 ##  -DBUILD_TESTING=OFF
  mkdir build
  cd build
- cmake  -DCMAKE_BUILD_TYPE=Release -DFMT_TEST=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR  ..
- make -j2
+ cmake  -DCMAKE_BUILD_TYPE=Release -DSPDLOG_BUILD_EXAMPLE=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR  ..
+ make -j4
  make install
  cd ..
 

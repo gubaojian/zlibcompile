@@ -6,7 +6,7 @@ LIB_NAME=fmt
 VERSION=11.2.0
 INSTALL_DIR=$HOME/cdeps/${LIB_MODE}/${LIB_NAME}/${VERSION}
 CDEPS_ZIP_FILE=cdeps_${LIB_NAME}_${VERSION}.zip
-DOWNLOAD_FILE=${LIB_NAME}-${VERSION}.tar.gz
+DOWNLOAD_FILE=${VERSION}.tar.gz
 DOWNLOAD_URL="https://github.com/fmtlib/fmt/archive/refs/tags/${VERSION}.tar.gz"
 UNZIP_DIR=${LIB_NAME}-${VERSION}
 uname -a
