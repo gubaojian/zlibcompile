@@ -55,3 +55,4 @@ header/*/*/*.zip
 header/*/*/*.gz
 header/*/*/*/
 header/*/*/*.tgz
+header/*/*/*.h
