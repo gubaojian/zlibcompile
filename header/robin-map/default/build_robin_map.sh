@@ -2,12 +2,12 @@
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LIB_MODE=header
-LIB_NAME=sparse-map
+LIB_NAME=robin-map
 VERSION=master
 INSTALL_DIR=$HOME/cdeps/${LIB_MODE}/${LIB_NAME}/${VERSION}
 CDEPS_ZIP_FILE=cdeps_${LIB_NAME}_${VERSION}.zip
-DOWNLOAD_FILE=${LIB_NAME}-${VERSION}.zip
-DOWNLOAD_URL="https://github.com/Tessil/sparse-map/archive/refs/heads/master.zip"
+DOWNLOAD_FILE=master.zip
+DOWNLOAD_URL="https://github.com/Tessil/robin-map/archive/refs/heads/master.zip"
 UNZIP_DIR=${LIB_NAME}-${VERSION}
 uname -a
 echo "Script directory: $SCRIPT_DIR"
